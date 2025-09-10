@@ -1,37 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { TableCell } from "./TableCell";
 
-export function Table ({ rowCount, columnCount, selectedMaze }) {
-    const [mazeLayout, setMazeLayout] = useState({});
-    
-    const onClick = (e, rowNum, colNum) => {
-        const newLayout = (mazeLayout) => {
-            if (typeof mazeLayout?.[rowNum] === "undefined") {
-                mazeLayout[rowNum] = [];
-            }
-            if (typeof mazeLayout[rowNum]?.[colNum] === "undefined") {
-                mazeLayout[rowNum][colNum] = [];
-            }
-            mazeLayout[rowNum][colNum] = selectedMaze;
+export function Table ({ rowCount, columnCount, selectedMaze, borderVisible }) {
+    const [mazeLayout, setMazeLayout] = useState([]);
 
-            return mazeLayout;
-
-        }
-        setMazeLayout(newLayout(mazeLayout));
-    };
+    // useEffect(() => {
+    //     const savedLayout = JSON.parse(localStorage.getItem("mazeLayout")) || [];
+    //     setMazeLayout(savedLayout);
+    // }, []);
 
     return (
-        <table className="d-flex">
+        <table className={"d-flex " + (borderVisible ? "table-spaced" : "table-unspaced")}>
             <tbody>
                 {[...Array(rowCount)].map((unused, rowNum) => (
                     <tr key={'row' + rowNum}>
                         {[...Array(columnCount)].map((unused, colNum) => (
-                            <td key={'cell' + colNum} className="square border-solid" onClick={(e) => onClick(e, rowNum, colNum)}>
-                                {
-                                    typeof mazeLayout?.[rowNum]?.[colNum] !== "undefined" ?
-                                        <img src={"assets/" + mazeLayout?.[rowNum]?.[colNum] + ".png"} className="square"></img>
-                                        : ""
-                                }
-                            </td>
+                            <TableCell colNum={colNum} rowNum={rowNum} selectedMaze={selectedMaze} setMazeLayout={setMazeLayout} borderVisible={borderVisible} />
                         ))}
                     </tr>
                 ))}

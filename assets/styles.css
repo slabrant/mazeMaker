@@ -8,6 +8,26 @@
     border: 1px solid black;
 }
 
-table {
+.no-border {
+    border: none;
+    border-spacing: 0;
+}
+
+.table-spaced {
     border-spacing: 1px;
+}
+
+.table-unspaced {
+    border-spacing: 0;
+}
+
+.table-unspaced td {
+    padding: 0;
+}
+
+.form-control {
+    width: 5em !important;
+    min-width: 0;
+    flex: 0 0 auto;
+    box-sizing: border-box;
 }
