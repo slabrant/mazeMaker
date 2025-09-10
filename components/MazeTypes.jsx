@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { MazeType } from "./MazeType";
 
-export function MazeTypes () {
-    const [selectedMaze, setSelectedMaze] = useState(-1);
+export function MazeTypes ({ selectedMaze, setSelectedMaze }) {
 
     return (
         <>
