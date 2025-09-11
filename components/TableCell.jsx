@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export function TableCell({ colNum, rowNum, selectedMaze, setMazeLayout, borderVisible }) {
+export function TableCell({ colNum, rowNum, selectedMaze, setMazeLayout, borderVisible, mouseRef }) {
     const [mazeId, setMazeId] = useState(15);
     
     const onClick = (e, rowNum, colNum) => {
@@ -14,8 +14,9 @@ export function TableCell({ colNum, rowNum, selectedMaze, setMazeLayout, borderV
         // });
         setMazeId(selectedMaze);
     };
-//  + 
-    return <td key={'cell' + colNum} className={"square" + (borderVisible ? " border-solid" : "")} onClick={(e) => onClick(e, rowNum, colNum)}>
-        <img src={"/assets/" + mazeId + ".png"} className="square"></img>
+    
+    return <td key={'cell' + colNum} className={"square" + (borderVisible ? " border-solid" : "")} 
+        onMouseDown={onClick} onMouseMove={() => mouseRef.down && onClick()}>
+        <img src={"/assets/" + mazeId + ".png"} className="square user-select-none" draggable="false"></img>
     </td>;
 }
