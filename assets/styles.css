@@ -1,6 +1,14 @@
 .square {
     width: 5em;
     height: 5em;
+}
+
+.square-no-border {
+    width: calc(5em - 1px);
+    height: calc(5em - 1px);
+}
+
+.pixelated {
     image-rendering: pixelated;
 }
 
