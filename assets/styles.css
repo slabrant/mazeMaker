@@ -1,21 +1,15 @@
 .square {
-    width: 5em;
-    height: 5em;
+    width: 5rem;
+    height: 5rem;
 }
-
 .square-no-border {
-    width: calc(5em - 1px);
-    height: calc(5em - 1px);
-}
-
-.pixelated {
-    image-rendering: pixelated;
+    width: calc(5rem - 1px);
+    height: calc(5rem - 1px);
 }
 
 .border-solid {
     border: 1px solid black;
 }
-
 .no-border {
     border: none;
     border-spacing: 0;
@@ -24,14 +18,26 @@
 .table-unspaced {
     border-spacing: 0;
 }
-
 .table-unspaced td {
     padding: 0;
 }
 
+.scroll-box {
+    overflow: auto;
+    width: calc(100vw - 12rem - 8px); /* 10rem for images, 2rem for margin/gap, 8px for borders */
+    height: calc(100vh - 3rem); /* 2rem for input, 1rem for margin */
+}
+
 .form-control {
-    width: 5em !important;
+    width: 5rem !important;
     min-width: 0;
     flex: 0 0 auto;
     box-sizing: border-box;
+}
+
+.h-2 {
+    height: 2rem;
+}
+.pixelated {
+    image-rendering: pixelated;
 }

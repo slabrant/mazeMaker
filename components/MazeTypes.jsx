@@ -5,7 +5,7 @@ export function MazeTypes ({ selectedMaze, setSelectedMaze }) {
 
     return (
         <>
-            <div className="d-flex flex-column align-items-between gap-3 m-3">
+            <div className="d-flex flex-column align-items-between gap-2 m-2">
                 <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={0} />
                 <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={5} />
                 <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={1} />
@@ -15,7 +15,7 @@ export function MazeTypes ({ selectedMaze, setSelectedMaze }) {
                 <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={11} />
                 <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={7} />
             </div>
-            <div className="d-flex flex-column align-items-between gap-3 m-3">
+            <div className="d-flex flex-column align-items-between gap-2 me-2 my-2">
                 <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={15} />
                 <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={10} />
                 <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={4} />

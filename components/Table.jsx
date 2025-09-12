@@ -13,20 +13,22 @@ export function Table ({ rowCount, columnCount, selectedMaze, borderVisible }) {
     }, []);
 
     return (
-        <table className="d-flex table-unspaced">
-            <tbody>
-                {[...Array(rowCount)].map((unused, rowNum) => (
-                    <tr key={'row' + rowNum}>
-                        {[...Array(columnCount)].map((unused, colNum) => (
-                            <TableCell
-                                selectedMaze={selectedMaze}
-                                borderVisible={borderVisible}
-                                mouseRef={mouseRef}
-                            />
-                        ))}
-                    </tr>
-                ))}
-            </tbody>
-        </table>
+        <div className='scroll-box'>
+            <table className="d-flex table-unspaced">
+                <tbody>
+                    {[...Array(rowCount)].map((unused, rowNum) => (
+                        <tr key={'row' + rowNum}>
+                            {[...Array(columnCount)].map((unused, colNum) => (
+                                <TableCell
+                                    selectedMaze={selectedMaze}
+                                    borderVisible={borderVisible}
+                                    mouseRef={mouseRef}
+                                />
+                            ))}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
     );
 }

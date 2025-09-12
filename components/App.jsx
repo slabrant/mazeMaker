@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Table } from "./Table";
 import { MazeTypes } from "./MazeTypes";
 import { NumberInput } from "./NumberInput";
@@ -13,7 +13,7 @@ export function App () {
         <div className="d-flex">
             <MazeTypes selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} />
             <div>
-                <span className="d-flex align-items-center gap-2 mb-2 mt-2">
+                <span className="d-flex align-items-center gap-2 my-2">
                     <NumberInput label={"row"} value={rowCount} setValue={setRowCount} />
                     <NumberInput label={"column"} value={columnCount} setValue={setColumnCount} />
                     <label className="w-5 form-check-label user-select-none" htmlFor="border_visible">Borders</label>
