@@ -1,7 +1,7 @@
 export function NumberInput({ label, value, setValue}) {
 
     const onNumberChange = (target, setValue) => {
-        setValue(parseInt(target.value));
+        setValue(parseInt(target.value || 0));
     }
 
     return (
