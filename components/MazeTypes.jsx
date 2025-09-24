@@ -1,29 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import { MazeType } from "./MazeType";
 
-export function MazeTypes ({ selectedMaze, setSelectedMaze }) {
+export function MazeTypes () {
 
     return (
         <>
             <div className="d-flex flex-column align-items-between gap-2 m-2">
-                <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={0} />
-                <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={5} />
-                <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={1} />
-                <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={2} />
-                <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={9} />
-                <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={12} />
-                <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={11} />
-                <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={7} />
+                <MazeType num={0} />
+                <MazeType num={5} />
+                <MazeType num={1} />
+                <MazeType num={2} />
+                <MazeType num={9} />
+                <MazeType num={12} />
+                <MazeType num={11} />
+                <MazeType num={7} />
             </div>
             <div className="d-flex flex-column align-items-between gap-2 me-2 my-2">
-                <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={15} />
-                <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={10} />
-                <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={4} />
-                <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={8} />
-                <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={3} />
-                <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={6} />
-                <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={14} />
-                <MazeType selectedMaze={selectedMaze} setSelectedMaze={setSelectedMaze} num={13} />
+                <MazeType num={-1} />
+                <MazeType num={10} />
+                <MazeType num={4} />
+                <MazeType num={8} />
+                <MazeType num={3} />
+                <MazeType num={6} />
+                <MazeType num={14} />
+                <MazeType num={13} />
             </div>
         </>
     );

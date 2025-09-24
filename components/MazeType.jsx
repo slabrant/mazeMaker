@@ -1,6 +1,8 @@
-import React, {useEffect} from "react";
+import React from "react";
+import { useAppContext } from "./AppContext";
 
-export function MazeType ({ selectedMaze, setSelectedMaze, num }) {
+export function MazeType ({ num }) {
+    const { selectedMaze, setSelectedMaze } = useAppContext();
 
     const selectSelf = () => {
         setSelectedMaze(num);

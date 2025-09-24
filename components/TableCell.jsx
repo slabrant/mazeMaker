@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useAppContext } from "./AppContext";
 
-export function TableCell({ initialMazeId, selectedMaze, borderVisible, mouseRef }) {
-    const [mazeId, setMazeId] = useState(initialMazeId || 15);
+export function TableCell({ rowNum, colNum, borderVisible, mouseRef }) {
+    const [mazeId, setMazeId] = useState(-1);
+    const { selectedMaze } = useAppContext();
     
     const selectMaze = (e) => {
         setMazeId(selectedMaze);
@@ -9,7 +11,7 @@ export function TableCell({ initialMazeId, selectedMaze, borderVisible, mouseRef
     
     return (
         <td 
-            key={'cell' + Math.random()}
+            key={`cell-${rowNum}-${colNum}`}
             onMouseDown={selectMaze}
             onMouseMove={() => mouseRef.down && selectMaze()}
             className={"square" + (borderVisible ? " border-solid" : "")} 

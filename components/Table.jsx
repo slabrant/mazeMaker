@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { TableCell } from "./TableCell";
 
-export function Table ({ rowCount, columnCount, selectedMaze, borderVisible }) {
+export function Table ({ rowCount, columnCount, borderVisible }) {
     const mouseRef = useRef(false);
 
     useEffect(() => {
@@ -20,7 +20,8 @@ export function Table ({ rowCount, columnCount, selectedMaze, borderVisible }) {
                         <tr key={'row' + rowNum}>
                             {[...Array(columnCount)].map((unused, colNum) => (
                                 <TableCell
-                                    selectedMaze={selectedMaze}
+                                    rowNum={rowNum}
+                                    colNum={colNum}
                                     borderVisible={borderVisible}
                                     mouseRef={mouseRef}
                                 />
