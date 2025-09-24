@@ -8,6 +8,7 @@ export function TableCell({ rowNum, colNum, borderVisible, mouseRef }) {
     const selectMaze = (e) => {
         setMazeId(selectedMaze);
     };
+    const imageClasses = "pixelated user-select-none " + (borderVisible ? "square-no-border" : "square");
     
     return (
         <td 
@@ -16,11 +17,13 @@ export function TableCell({ rowNum, colNum, borderVisible, mouseRef }) {
             onMouseMove={() => mouseRef.down && selectMaze()}
             className={"square" + (borderVisible ? " border-solid" : "")} 
         >
-            <img 
-                src={"/assets/" + mazeId + ".png"}
-                className={"pixelated user-select-none " + (borderVisible ? "square-no-border" : "square")}
-                draggable="false">
-            </img>
+            {mazeId === -1 ? <div className={imageClasses} draggable="false"></div> 
+                : <img 
+                    src={"/assets/" + mazeId + ".png"}
+                    className={imageClasses}
+                    draggable="false">
+                </img>}
+            
         </td>
     );
 }

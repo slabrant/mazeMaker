@@ -5,7 +5,7 @@ export function MazeTypes () {
 
     return (
         <>
-            <div className="d-flex flex-column align-items-between gap-2 m-2">
+            <div className="d-flex flex-column align-items-between gap-2 m-2 d-print-none">
                 <MazeType num={0} />
                 <MazeType num={5} />
                 <MazeType num={1} />
@@ -15,7 +15,7 @@ export function MazeTypes () {
                 <MazeType num={11} />
                 <MazeType num={7} />
             </div>
-            <div className="d-flex flex-column align-items-between gap-2 me-2 my-2">
+            <div className="d-flex flex-column align-items-between gap-2 me-2 my-2 d-print-none">
                 <MazeType num={-1} />
                 <MazeType num={10} />
                 <MazeType num={4} />

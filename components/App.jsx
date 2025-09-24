@@ -15,7 +15,7 @@ export function App () {
             <div className="d-flex">
                 <MazeTypes/>
                 <div>
-                    <span className="d-flex align-items-center gap-2 my-2">
+                    <span className="d-flex align-items-center gap-2 my-2 d-print-none">
                         <NumberInput label={"row"} value={rowCount} setValue={setRowCount} />
                         <NumberInput label={"column"} value={columnCount} setValue={setColumnCount} />
                         <label className="w-5 form-check-label user-select-none" htmlFor="border_visible">Borders</label>
